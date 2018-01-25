@@ -69,14 +69,8 @@ variable "abort_incomplete_multipart_upload_days" {
     default = "7"
 }
 
-variable "transition_days" {
+variable "expiration_days" {
     type = "string"
-    description = "Specifies the number of days after object creation when the transition takes effect."
-    default = "30"
-}
-
-variable "storage_class" {
-    type = "string"
-    description = "Specifies the Amazon S3 storage class to which you want the object to transition. Can be STANDARD_IA or GLACIER."
-    default = "GLACIER"
+    description = "Specifies the number of days after object creation when the object will be automatically deleted."
+    default = "7"
 }

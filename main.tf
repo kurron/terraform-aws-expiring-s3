@@ -23,12 +23,11 @@ resource "aws_s3_bucket" "bucket" {
         mfa_delete = "${var.mfa_delete}"
     }
     lifecycle_rule = {
-        id                                     = "transition-to-glacier"
+        id                                     = "age-out-objects"
         enabled                                = true
         abort_incomplete_multipart_upload_days = "${var.abort_incomplete_multipart_upload_days}"
-        transition                             = {
-            days = "${var.transition_days}"
-            storage_class = "${var.storage_class}"
+        expiration = {
+            days = "${var.expiration_days}"
         }
     }
     acceleration_status = "${var.acceleration_status}"

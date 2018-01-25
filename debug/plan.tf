@@ -7,7 +7,7 @@ module "bucket" {
     source = "../"
 
     region                           = "us-west-2"
-    name                             = "Debug-Bucket-One"
+    name                             = "Expiring-Bucket-One"
     project                          = "Debug"
     purpose                          = "Testing out Terraform module"
     creator                          = "kurron@jvmguy.com"
