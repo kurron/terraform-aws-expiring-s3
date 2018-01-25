@@ -74,3 +74,9 @@ variable "expiration_days" {
     description = "Specifies the number of days after object creation when the object will be automatically deleted."
     default = "7"
 }
+
+variable "acl" {
+    type = "string"
+    description = "The canned ACL to apply."
+    default = "private"
+}

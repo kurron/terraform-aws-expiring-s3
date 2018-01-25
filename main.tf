@@ -9,6 +9,7 @@ provider "aws" {
 
 resource "aws_s3_bucket" "bucket" {
     bucket = "${lower( var.name )}"
+    acl    = "${var.acl}"
     tags   = {
         Name        = "${var.name}"
         Project     = "${var.project}"
